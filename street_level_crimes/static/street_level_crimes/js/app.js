@@ -4,19 +4,20 @@ console.log("app.js is working")
 
 // Arc GIS Map init
 require([
-    "esri/Map",
+    "esri/WebMap",
     "esri/views/MapView",
-  ], function(Map, MapView) {
+  ], function(WebMap, MapView) {
 
-    var map = new Map({
-      basemap: "topo"
-    });
+    var map = new WebMap({
+        portalItem: {
+          id: "211c0a6c69b7453b824e6ca8e05e7e20"
+        }
+      });
 
-    var view = new MapView({
-      container: "viewDiv",
-      map: map,
-      center: [-0.11, 51.5],
-      zoom: 12
-    });
+      //*** ADD ***//
+      var view = new MapView({
+        container: "viewDiv",
+        map: map
+      });
 
   });
