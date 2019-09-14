@@ -20,3 +20,6 @@ def police_form(request):
     services.post_json("http://bugs.python.org", all_categories_json)
     print(all_categories_json)
     return render(request, 'street_level_crimes/police_form.html', {})
+
+def crime_map(request):
+    return render(request, 'street_level_crimes/crime_map.html', {})
