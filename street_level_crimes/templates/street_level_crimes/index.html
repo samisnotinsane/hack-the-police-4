@@ -17,17 +17,23 @@
                 <div class="col-md-8">
                     {% if crimes_list %}
                     Crime data response: <br/>
-                    <ul>
+                    <table>
+                        <tr>
+                            <th>Id</th>
+                            <th>Category</th>
+                            <th>Outcome Status</th>
+                            <th>Location</th>
+                        </tr>
                         {% for crime in crimes_list %}
-                        <li>
-                            Id: {{ crime.id }},
-                            Category: {{ crime.category }},
-                            Outcome status: {{ crime.outcome_status }}
-
-                        </li>
+                        <tr>
+                            <td>{{ crime.id }}</td>
+                            <td>{{ crime.category }}</td>
+                            <td>{{ crime.outcome_status }}</td>
+                            <td>({{ crime.location.latitude }}, {{ crime.location.longitude }})</td>
+                        </tr>
 
                         {% endfor %}
-                    </ul>
+                    </table>
                     {% endif %}
                 </div>
             </div>
