@@ -12,6 +12,6 @@ def get_street_crimes(latitude, longitude, date):
         crimes_list.append(crimes[i])
     return crimes_list
 
-def post_crime_categories(json_data):
-    r = requests.post("http://bugs.python.org", data=json_data) # Example URL
+def post_json(url, json_data):
+    r = requests.post(url=url, data=json_data) # Example URL
     print(r.status_code, r.reason)
