@@ -17,5 +17,6 @@ def index(request):
 
 def police_form(request):
     all_categories_json = serializers.serialize('json', CrimeCategories.objects.all())
+    services.post_crime_categories(all_categories_json)
     print(all_categories_json)
     return render(request, 'street_level_crimes/police_form.html', {})
