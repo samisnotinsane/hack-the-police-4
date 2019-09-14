@@ -12,3 +12,6 @@ def index(request):
     return render(request, 'street_level_crimes/index.html', {
         'crimes_list': crimes_list
     })
+
+def form(request):
+    return render(request, 'street_level_crimes/forms.html', {})

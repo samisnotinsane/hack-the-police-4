@@ -23,3 +23,6 @@ class StreetCrime(models.Model):
     outcome_status = models.CharField(max_length=200)
     outcome_category = models.CharField(max_length=200)
     outcome_date = models.CharField(max_length=200)
+
+class CluesIncident(models.Model):
+    itype = models.CharField(max_length=200, choices=[('1', 'ASB'), ('2' ,'Burglary')])
