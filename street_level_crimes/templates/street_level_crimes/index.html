@@ -1,0 +1,42 @@
+{% load static %}
+<html>
+    <head>
+        <title>Street Level Crimes</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'street_level_crimes/css/style.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+            <h1><a href="#">Street Level Crimes</a></h1>
+        </div>
+
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% if crimes_list %}
+                    Crime data response: <br/>
+                    <table>
+                        <tr>
+                            <th>Id</th>
+                            <th>Category</th>
+                            <th>Outcome Status</th>
+                            <th>Location</th>
+                        </tr>
+                        {% for crime in crimes_list %}
+                        <tr>
+                            <td>{{ crime.id }}</td>
+                            <td>{{ crime.category }}</td>
+                            <td>{{ crime.outcome_status }}</td>
+                            <td>({{ crime.location.latitude }}, {{ crime.location.longitude }})</td>
+                        </tr>
+
+                        {% endfor %}
+                    </table>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
