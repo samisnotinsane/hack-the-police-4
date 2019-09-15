@@ -15,26 +15,31 @@ import numpy as np
 video_capture = cv2.VideoCapture(0)
 
 # Load a sample picture and learn how to recognize it.
-obama_image = face_recognition.load_image_file("known_people/Marcus_Mattus.jpeg")
-obama_face_encoding = face_recognition.face_encodings(obama_image)[0]
+marcus_image = face_recognition.load_image_file("known_people/Marcus_Mattus.jpeg")
+marcus_face_encoding = face_recognition.face_encodings(marcus_image)[0]
 
 justin_image = face_recognition.load_image_file("known_people/Justin_Grierson.jpeg")
 justin_face_encoding = face_recognition.face_encodings(justin_image)[0]
 
 # Load a second sample picture and learn how to recognize it.
-biden_image = face_recognition.load_image_file("known_people/Sameen_Islam.jpeg")
-biden_face_encoding = face_recognition.face_encodings(biden_image)[0]
+sameen_image = face_recognition.load_image_file("known_people/Sameen_Islam.jpeg")
+sameen_face_encoding = face_recognition.face_encodings(sameen_image)[0]
+
+bulbul_image = face_recognition.load_image_file("known_people/Bulbul_Islam.jpeg")
+bulbul_face_encoding = face_recognition.face_encodings(bulbul_image)[0]
 
 # Create arrays of known face encodings and their names
 known_face_encodings = [
-    obama_face_encoding,
-    biden_face_encoding,
-    justin_face_encoding
+    marcus_face_encoding,
+    sameen_face_encoding,
+    justin_face_encoding,
+    bulbul_face_encoding
 ]
 known_face_names = [
     "Marcus Mattus",
     "Sameen Islam",
-    "Justin Grierson"
+    "Justin Grierson",
+    "Bulbul Islam"
 ]
 
 # Initialize some variables
