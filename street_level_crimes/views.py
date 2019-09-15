@@ -36,3 +36,5 @@ def police_form(request):
     print(all_categories_json)
     return render(request, 'street_level_crimes/police_form.html', {})
 
+def new_incident(request):
+    return render(request, 'street_level_crimes/new_incident_form.html', {})
