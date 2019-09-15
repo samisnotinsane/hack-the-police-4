@@ -54,6 +54,10 @@ In your browser, navigate to the following URL to open the frontend:
 http://127.0.0.1:8000/
 ```
 
+## Screenshots
+
+![Crime Dashboard](/assets/screenshots/crime-dashboard.png?raw=true "QUOD crime dashboard showing local threat level, incidents not yet raised and recent local crimes.")
+
 ## Built With
 
 * [Django](https://www.djangoproject.com/) - The python based web framework
