@@ -1,8 +1,108 @@
 {% extends 'street_level_crimes/base.html' %}
 
 {% block content %}
-    <h2>Dashboard</h2>
+    <h2>Nearby crimes</h2>
+
+    <div class="alert alert-warning" role="alert">
+        Crimes are at an elevated level near your current location!
+    </div>
+
+    <h2>Incidents not yet raised</h2>
     <div class="row">
+        <div class="col-sm">
+            <button type="button" class="btn btn-primary">
+                Burglary <span class="badge badge-light">3</span>
+            </button>
+        </div>
+        <div class="col-sm">
+            <button type="button" class="btn btn-primary">
+                ASB <span class="badge badge-light">26</span>
+            </button>
+        </div>
+        <div class="col-sm">
+            <button type="button" class="btn btn-primary">
+                Drugs <span class="badge badge-light">34</span>
+            </button>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm">
+            <h3>Recent Crimes</h3>
+
+            <!-- <p><b>Crime details</b></p>
+                <b>Category:</b> {{ crimes_list.360.category }}<br>
+                <b>Outcome status:</b> {{ crimes_list.360.outcome_status }}<br>
+                <b>(Latitude, Longitude):</b> ({{ crimes_list.360.location.latitude }}, {{ crimes_list.360.location.longitude }})
+                <b>Location (street): </b> {{ crimes_list.360.location.street.name }}
+                <b>Context: </b>{{ crimes_list.360.context }}
+
+                <br>
+                {{ crimes_list.0 }} -->
+        </div>
+        <div class="col-sm">
+        </div>
+        <div class="col-sm">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm">
+            <!-- ASB -->
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ crimes_list.0.location.street.name }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ crimes_list.0.category }}</h6>
+                    <span class="badge badge-pill badge-warning">Warning</span>
+                    <p class="card-text">
+                        {% if crimes_list.0.context %}
+                            {{ crimes_list.0.context }}
+                        {% else %}
+                            No further information available.
+                        {% endif %}
+                    </p>
+                    <a href="/new-incident" class="card-link">Raise incident</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <!-- Arson -->
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ crimes_list.360.location.street.name }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ crimes_list.360.category }}</h6>
+                    <span class="badge badge-pill badge-danger">Danger</span>
+                    <p class="card-text">
+                        {% if crimes_list.360.context %}
+                            {{ crimes_list.360.context }}
+                        {% else %}
+                            No further information available.
+                        {% endif %}
+                    </p>
+                    <a href="/new-incident" class="card-link">Raise incident</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <!-- Drugs -->
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ crimes_list.490.location.street.name }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ crimes_list.490.category }}</h6>
+                    <p class="card-text">
+                        {% if crimes_list.490.context %}
+                            {{ crimes_list.490.context }}
+                        {% else %}
+                            No further information available.
+                        {% endif %}
+                    </p>
+                    <a href="/new-incident" class="card-link">Raise incident</a>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <!-- <div class="row">
         <div class="col-md-8">
             {% if crimes_list %}
             <table>
@@ -23,5 +123,5 @@
                 {% endfor %}
             </table>
             {% endif %}
-        </div>
+        </div> -->
 {% endblock %}
