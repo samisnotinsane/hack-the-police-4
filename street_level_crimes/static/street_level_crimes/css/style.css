@@ -5,13 +5,18 @@ table, th, td {
     border: 1px solid black;
 }
 
-#mapid { 
-    height: 180px; 
-}
-
-html, body, #viewDiv {
+html, body, #map {
     padding: 0;
     margin: 0;
     height: 100%;
     width: 100%;
 }
+
+.dojoxColorPicker {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    -moz-box-shadow: 0 0 7px #888;
+    -webkit-box-shadow: 0 0 7px #888;
+    box-shadow: 0 0 7px #888;
+  }
