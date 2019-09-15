@@ -1,0 +1,35 @@
+{% load static %}
+<html>
+    <head>
+        <title>Street Level Crimes</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'street_level_crimes/css/style.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+            <h1><a href="#">Add An Incident</a></h1>
+        </div>
+
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    <form action="/action_page.php">
+                        <select name="cars">
+                          <option value="volvo">Volvo</option>
+                          <option value="saab">Saab</option>
+                          <option value="fiat">Fiat</option>
+                          <option value="audi">Audi</option>
+                        </select>
+                        <br><br>
+                         <textarea name="message" rows="10" cols="30">The cat was playing in the garden.</textarea>
+                       <br>
+                        <input type="submit">
+                      </form>
+                      
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
