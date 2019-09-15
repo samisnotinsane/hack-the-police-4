@@ -1,23 +1,29 @@
-// App level, global js script
-console.log("app.js is working")
+/*
+ * App level, global js script.
+ * DATE: 15 Sept. 2019
+ */
 
+  // DOM Ready Callback
+  $( document ).ready(function() {
+    // Handler for .ready() called.
+    console.log("READY - app.js is working")
+  });
 
 // Arc GIS Map init
 require([
-    "esri/WebMap",
-    "esri/views/MapView",
-  ], function(WebMap, MapView) {
+  "esri/WebMap",
+  "esri/views/MapView"
+], function(WebMap, MapView) {
 
-    var map = new WebMap({
-        portalItem: {
-          id: "211c0a6c69b7453b824e6ca8e05e7e20"
-        }
-      });
-
-      //*** ADD ***//
-      var view = new MapView({
-        container: "viewDiv",
-        map: map
-      });
-
+  var webmap = new WebMap({
+    portalItem: {
+      id: "41281c51f9de45edaf1c8ed44bb10e30"
+    }
   });
+
+  var view = new MapView({
+    container: "viewDiv",
+    map: webmap
+  });
+  
+});

@@ -4,3 +4,14 @@ h1 a, h2 a {
 table, th, td {
     border: 1px solid black;
 }
+
+#mapid { 
+    height: 180px; 
+}
+
+html, body, #viewDiv {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
