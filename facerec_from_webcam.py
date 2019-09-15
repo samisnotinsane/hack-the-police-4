@@ -26,7 +26,7 @@ known_face_encodings = [
     # biden_face_encoding
 ]
 known_face_names = [
-    "Marcus_Mattus",
+    "Marcus Mattus",
 ]
 
 while True:
