@@ -15,3 +15,12 @@ def index(request):
 
 def form(request):
     return render(request, 'street_level_crimes/forms.html', {})
+
+def form2(request):
+    return render(request, 'street_level_crimes/forms2.html', {})
+
+def form3(request):
+    return render(request, 'street_level_crimes/forms3.html', {})
+
+def form4(request):
+    return render(request, 'street_level_crimes/forms4.json', {})
