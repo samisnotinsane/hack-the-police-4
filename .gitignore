@@ -1,5 +1,6 @@
 # Created by https://www.gitignore.io
 
+street_level_crimes/__pycache__/*
 unknown_pictures/*
 known_people/*
 
