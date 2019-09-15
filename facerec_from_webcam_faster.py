@@ -18,6 +18,9 @@ video_capture = cv2.VideoCapture(0)
 obama_image = face_recognition.load_image_file("known_people/Marcus_Mattus.jpeg")
 obama_face_encoding = face_recognition.face_encodings(obama_image)[0]
 
+justin_image = face_recognition.load_image_file("known_people/Justin_Grierson.jpeg")
+justin_face_encoding = face_recognition.face_encodings(justin_image)[0]
+
 # Load a second sample picture and learn how to recognize it.
 biden_image = face_recognition.load_image_file("known_people/Sameen_Islam.jpeg")
 biden_face_encoding = face_recognition.face_encodings(biden_image)[0]
@@ -25,11 +28,13 @@ biden_face_encoding = face_recognition.face_encodings(biden_image)[0]
 # Create arrays of known face encodings and their names
 known_face_encodings = [
     obama_face_encoding,
-    biden_face_encoding
+    biden_face_encoding,
+    justin_face_encoding
 ]
 known_face_names = [
     "Marcus Mattus",
-    "Sameen Islam"
+    "Sameen Islam",
+    "Justin Grierson"
 ]
 
 # Initialize some variables
