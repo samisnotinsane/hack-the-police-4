@@ -1,5 +1,8 @@
 # Created by https://www.gitignore.io
 
+unknown_pictures/*
+known_people/*
+
 ### OSX ###
 .DS_Store
 .AppleDouble

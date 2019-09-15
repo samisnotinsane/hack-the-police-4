@@ -1,9 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import loader
 from django.core import serializers
 
 import requests
+import subprocess
+
 from . import services
 from .models import CrimeCategories
 
@@ -38,3 +40,7 @@ def police_form(request):
 
 def new_incident(request):
     return render(request, 'street_level_crimes/new_incident_form.html', {})
+
+def facial_rec(request):
+    subprocess.check_call(['python', 'facerec_from_webcam_faster.py'])
+    return redirect('/')
